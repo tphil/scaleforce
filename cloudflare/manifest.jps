@@ -5,11 +5,6 @@ description: Addon for CloudFlare DNS
 logo: https://raw.githubusercontent.com/jelastic-jps/wordpress-cluster/master/images/wp-cluster.png
 settings:
     fields:
-    - name: cf_id
-      caption: CF ID
-      type: string
-      default: ''
-      required: true
     - name: cf_email
       caption: CF Email
       type: string
@@ -36,9 +31,10 @@ onInstall:
 
   - if (nodes.bl):
     - cmd[bl]:
-      - wget https://raw.githubusercontent.com/sych74/test/master/CF-domain.sh -O ~/CF-domain.sh
-      - bash ~/CF-domain.sh ${globals.CF_EMAIL} ${globals.CF_KEY} ${globals.CF_ZONE_ID} ${globals.CUSTOM_DOMAIN} ${nodes.bl[0].extIPs}
+      - wget https://raw.githubusercontent.com/tphil/scaleforce/master/cloudflare/script/cf_purge_all.sh -O ~/cf_purge_all.sh
+      - bash ~/cf_purge_all.sh ${globals.CF_EMAIL} ${globals.CF_KEY} ${globals.CF_ZONE_ID}
   - if (!nodes.bl):
     - cmd[cp]:
-      - wget https://raw.githubusercontent.com/sych74/test/master/CF-domain.sh -O ~/CF-domain.sh
-      - bash ~/CF-domain.sh ${globals.CF_EMAIL} ${globals.CF_KEY} ${globals.CF_ZONE_ID} ${globals.CUSTOM_DOMAIN} ${nodes.cp[0].extIPs}
+      - wget https://raw.githubusercontent.com/tphil/scaleforce/master/cloudflare/script/cf_purge_all.sh -O ~/cf_purge_all.sh
+      - bash ~/cf_purge_all.sh ${globals.CF_EMAIL} ${globals.CF_KEY} ${globals.CF_ZONE_ID}
+      
