@@ -58,7 +58,8 @@
 					"sed -i \"\\$atomcat\\ ALL=NOPASSWD\\:\\ ALL\" /etc/sudoers",
 					"sed -i \"\\$anginx\\ ALL=NOPASSWD\\:\\ ALL\" /etc/sudoers",
 					"sed -i \"\\$ajelastic\\ ALL=NOPASSWD\\:\\ ALL\" /etc/sudoers",
-					"sed -i \"\\$alitespeed\\ ALL=NOPASSWD\\:\\ ALL\" /etc/sudoers"
+					"sed -i \"\\$alitespeed\\ ALL=NOPASSWD\\:\\ ALL\" /etc/sudoers",
+					"sed -i \"\\$anodejs\\ ALL=NOPASSWD\\:\\ ALL\" /etc/sudoers"
 				],
 				"user": "root"
 			    }
