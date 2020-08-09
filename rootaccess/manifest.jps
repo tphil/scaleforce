@@ -103,7 +103,8 @@
 				"user": "root",
 				"commands": [
 					"sed -i \"\\$anginx\\ ALL=NOPASSWD\\:\\ ALL\" /etc/sudoers",
-					"sed -i \"\\$ajelastic\\ ALL=NOPASSWD\\:\\ ALL\" /etc/sudoers"
+					"sed -i \"\\$ajelastic\\ ALL=NOPASSWD\\:\\ ALL\" /etc/sudoers",
+					"sed -i \"\\$alitespeed\\ ALL=NOPASSWD\\:\\ ALL\" /etc/sudoers"
 				]
 			    }
 			]
